@@ -1,0 +1,25 @@
+{
+  "name": "@src/testcode",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "files": [],
+  "scripts": {
+    "setup": "curl -L https://foundry.paradigm.xyz | bash && foundryup",
+    "compile": "forge build",
+    "clean": "forge clean",
+    "slither": "slither .",
+    "test": "npm run test:unit",
+    "test:unit": "forge test --match-path ./test/** -v"
+  },
+  "authors": "Iwaki Hiroto",
+  "dependencies": {
+    "@openzeppelin/contracts": "5.0"
+  },
+  "devDependencies": {},
+  "lint-staged": {
+    "*.{sol}": [
+      "npx prettier --config .prettierrc 'src/**/*.sol' --write"
+    ]
+  }
+}
